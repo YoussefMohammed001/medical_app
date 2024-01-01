@@ -30,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
 
                     "Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
                     textAlign:  TextAlign.center,
-                    style: TextStyles.font13Grey,
+                    style: TextStyles.font13GrayRegular,
                   )
                 ],
               ),

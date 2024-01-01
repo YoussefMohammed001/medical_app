@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medical_app/core/helpers/navigators.dart';
+import 'package:medical_app/core/rounting/routes.dart';
 import 'package:medical_app/core/theming/colors.dart';
 import 'package:medical_app/core/theming/styles.dart';
 
@@ -13,7 +15,7 @@ class GetStartedButton extends StatelessWidget {
       child: ElevatedButton(
 
           onPressed: (){
-
+            context.pushNamed(Routes.loginScreen);
       },
           style: ButtonStyle(
             shape: MaterialStatePropertyAll(
@@ -26,7 +28,7 @@ RoundedRectangleBorder(
                 minimumSize: MaterialStateProperty.all(const Size(double.infinity, 50))
           ),
           child:  Text("Get Started",
-style: TextStyles.font16SimiBold,
+style: TextStyles.font16WhiteSemiBold,
 
 
 

@@ -1,56 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-Future push(
-  BuildContext context,
-  Widget screen,
-) async {
-  return await Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => screen),
-  );
-}
+extension Navigation on BuildContext {
+  Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
+    return Navigator.of(this).pushNamed(routeName, arguments: arguments);
+  }
 
-Future pushReplacement(
-  BuildContext context,
-  Widget screen,
-) async {
-  return await Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(builder: (context) => screen),
-  );
-}
+  Future<dynamic> pushReplacementNamed(String routeName, {Object? arguments}) {
+    return Navigator.of(this)
+        .pushReplacementNamed(routeName, arguments: arguments);
+  }
 
-Future pushAndRemoveUntil(
-  BuildContext context,
-  Widget screen,
-) async {
-  return await Navigator.pushAndRemoveUntil(
-    context,
-    MaterialPageRoute(builder: (context) => screen),
-    (route) => false,
-  );
-}
+  Future<dynamic> pushNamedAndRemoveUntil(String routeName,
+      {Object? arguments, required RoutePredicate predicate}) {
+    return Navigator.of(this)
+        .pushNamedAndRemoveUntil(routeName, predicate, arguments: arguments);
+  }
 
-Future pushNamed(
-  BuildContext context,
-  String routeName, {
-  Object? arguments,
-}) async {
-  return await Navigator.pushNamed(context, routeName, arguments: arguments);
-}
-
-void pushNamedAndRemove(
-  context,
-  routeName, {
-  Object? arguments,
-}) {
-  Navigator.pushNamedAndRemoveUntil(
-    context,
-    routeName,
-    (route) => false,
-    arguments: arguments,
-  );
-}
-
-void pop(context, [dynamic result]) {
-  Navigator.pop(context, result);
+  void pop() => Navigator.of(this).pop();
 }
