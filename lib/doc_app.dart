@@ -24,7 +24,6 @@ primaryColor:  AppColors.primaryColor,
 initialRoute:  Routes.onBoardingScreen,
   onUnknownRoute: appRouter.generateRoute,
 ),
-
     );
   }
 }
