@@ -5,7 +5,7 @@ class ApiConstants{
 static const String baseApiUrl = "https://vcare.integration25.com/api/";
 /// Authorization
 static const String login = "auth/login";
-static const String register = "";
+static const String signUp = "auth/register";
 static const String logout = "";
 
 

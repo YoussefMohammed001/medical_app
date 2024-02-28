@@ -4,9 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_app/core/helpers/spacing.dart';
 import 'package:medical_app/core/theming/styles.dart';
 import 'package:medical_app/core/widgets/app_text_button.dart';
-import 'package:medical_app/features/login/data/models/login_request_body.dart';
 import 'package:medical_app/features/login/logic/login_cubit.dart';
-import 'package:medical_app/features/login/ui/widgets/already_have_account.dart';
+import 'package:medical_app/features/login/ui/widgets/dont_have_account.dart';
 import 'package:medical_app/features/login/ui/widgets/email_and_password.dart';
 import 'package:medical_app/features/login/ui/widgets/login_listener.dart';
 import 'package:medical_app/features/login/ui/widgets/terms_and_conditions.dart';
@@ -59,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                 verticalSpacing(16),
                 const TermsAndConditionsText(),
                 verticalSpacing(60),
-                const AlreadyHaveAccountText(),
+                const DontHaveAccountText(),
                 const LoginBlocListener(),
               ],
             ),
@@ -72,12 +71,7 @@ class LoginScreen extends StatelessWidget {
 
 void validateThenDoLogin(BuildContext context) {
   if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-    context.read<LoginCubit>().emitLoginStates(loginRequestBody:  LoginRequestBody(
-      email: context.read<LoginCubit>().emailEditingController.text,
-      pass: context.read<LoginCubit>().passEditingController.text,
-    ),
-    );
-
-
+    context.read<LoginCubit>().emitLoginStates();
   }
+
 }

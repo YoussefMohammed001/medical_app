@@ -13,9 +13,11 @@ TextEditingController emailEditingController = TextEditingController();
 TextEditingController passEditingController = TextEditingController();
 
 
-  Future<void> emitLoginStates({required LoginRequestBody loginRequestBody}) async {
+  Future<void> emitLoginStates() async {
 emit( const LoginState.loading());
-final response = await _loinRepo.login(loginRequestBody);
+final response = await _loinRepo.login(
+  LoginRequestBody(email: emailEditingController.text, pass: passEditingController.text)
+);
 response.when(success: (loginResponse){
   emit(LoginState.success(loginResponse));
 }, failure: (error){
