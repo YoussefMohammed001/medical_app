@@ -7,8 +7,8 @@ class DocApp extends StatelessWidget {
   final AppRouter appRouter;
   const DocApp({super.key, required this.appRouter});
 
-  @override
 
+  @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
@@ -24,7 +24,6 @@ primaryColor:  AppColors.primaryColor,
 initialRoute:  Routes.onBoardingScreen,
   onUnknownRoute: appRouter.generateRoute,
 ),
-
     );
   }
 }

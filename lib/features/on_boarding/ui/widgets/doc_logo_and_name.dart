@@ -14,7 +14,7 @@ class DocLogoAndName extends StatelessWidget {
       children: [
         const AppSVG(assetName: "logo"),
         SizedBox(width: 10.w,),
-        Text("DocDoc",style: TextStyles.font24BlackWeight,)
+        Text("DocDoc",style: TextStyles.font24BlackBold,)
       ],
     );
   }
