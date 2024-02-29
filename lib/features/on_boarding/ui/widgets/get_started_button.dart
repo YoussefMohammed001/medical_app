@@ -23,7 +23,7 @@ RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(16)
 )
             ),
-            backgroundColor: MaterialStatePropertyAll(AppColors.primaryColor),
+            backgroundColor: const MaterialStatePropertyAll(AppColors.primaryColor),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 minimumSize: MaterialStateProperty.all(const Size(double.infinity, 50))
           ),

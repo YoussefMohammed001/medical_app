@@ -21,9 +21,9 @@ class OnBoardingScreen extends StatelessWidget {
           ),
           child:  Column(
             children: [
-              DocLogoAndName(),
+              const DocLogoAndName(),
               SizedBox(height: 30.h,),
-              DoctorImageAndText(),
+              const DoctorImageAndText(),
               Column(
                 children: [
                   Text(
@@ -35,7 +35,7 @@ class OnBoardingScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 30.h,),
-              GetStartedButton()
+              const GetStartedButton()
 
             ],
           ),
